@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+.image-content-container {
+  padding: 100px 0;
+  background-image: url(../src/images/img-gemstones.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.image-content-container h2 {
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.stone-container {
+  border: 0.5px black;
+}
