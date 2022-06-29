@@ -11,7 +11,7 @@ class AddItem extends Component {
   };
 
   handleSaveItem = () => {
-    var validation = this.validateFormData();
+    var validation = this.validateFormData(this.state);
     if (validation.IsValid) {
       this.state.OnAddItem({
         ItemName: this.state.ItemName,
@@ -33,8 +33,7 @@ class AddItem extends Component {
     }
   };
 
-  validateFormData() {
-    const formData = this.state;
+  validateFormData(formData) {
     let errorMessage = "";
     let isValid = false;
 
