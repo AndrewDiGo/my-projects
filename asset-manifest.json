@@ -1,16 +1,14 @@
 {
   "files": {
-    "main.css": "/my-projects/static/css/main.b1ad20ee.css",
-    "main.js": "/my-projects/static/js/main.2f6149ca.js",
-    "static/js/787.9ae43886.chunk.js": "/my-projects/static/js/787.9ae43886.chunk.js",
-    "static/media/img-gemstones.jpg": "/my-projects/static/media/img-gemstones.afdd9ff3bed0de677cd4.jpg",
-    "index.html": "/my-projects/index.html",
-    "main.b1ad20ee.css.map": "/my-projects/static/css/main.b1ad20ee.css.map",
-    "main.2f6149ca.js.map": "/my-projects/static/js/main.2f6149ca.js.map",
-    "787.9ae43886.chunk.js.map": "/my-projects/static/js/787.9ae43886.chunk.js.map"
+    "main.css": "/gemstones/static/css/main.8da3bf55.css",
+    "main.js": "/gemstones/static/js/main.a1fcdafe.js",
+    "static/media/img-gemstones.jpg": "/gemstones/static/media/img-gemstones.afdd9ff3bed0de677cd4.jpg",
+    "index.html": "/gemstones/index.html",
+    "main.8da3bf55.css.map": "/gemstones/static/css/main.8da3bf55.css.map",
+    "main.a1fcdafe.js.map": "/gemstones/static/js/main.a1fcdafe.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1ad20ee.css",
-    "static/js/main.2f6149ca.js"
+    "static/css/main.8da3bf55.css",
+    "static/js/main.a1fcdafe.js"
   ]
 }
