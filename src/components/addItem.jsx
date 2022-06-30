@@ -5,6 +5,8 @@ class AddItem extends Component {
     ItemName: "",
     Description: "",
     Price: "",
+    ImgURL: "",
+    IsValidImgURL: false,
     ErrorMessage: "",
     SuccessMessage: "",
     OnAddItem: this.props.onAddItem,
@@ -16,6 +18,7 @@ class AddItem extends Component {
       this.state.OnAddItem({
         ItemName: this.state.ItemName,
         Description: this.state.Description,
+        ImgURL: this.state.ImgURL,
         Price: this.state.Price,
       });
 
@@ -23,6 +26,7 @@ class AddItem extends Component {
         ItemName: "",
         Description: "",
         Price: "",
+        ImgURL: "",
         ErrorMessage: "",
         SuccessMessage: "Item saved.",
       });
@@ -33,6 +37,12 @@ class AddItem extends Component {
     }
   };
 
+  handleImageLoad(isSuccess) {
+    this.setState({
+      IsValidImgURL: isSuccess,
+    });
+  }
+
   validateFormData(formData) {
     let errorMessage = "";
     let isValid = false;
@@ -40,6 +50,8 @@ class AddItem extends Component {
     if (!formData.ItemName) errorMessage = "Item Name is required.";
     else if (!formData.Description)
       errorMessage = "Item Description is required.";
+    else if (formData.ImgURL && !formData.IsValidImgURL)
+      errorMessage = "Image URL is invalid.";
     else if (!formData.Price) errorMessage = "Price is required.";
     else isValid = true;
 
@@ -62,6 +74,11 @@ class AddItem extends Component {
           Description: value,
         });
         break;
+      case "item-image-url":
+        this.setState({
+          ImgURL: value,
+        });
+        break;
       case "item-price":
         this.setState({
           Price: value,
@@ -73,7 +90,7 @@ class AddItem extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-4">
+        <div className="col-md-4 col-sm-6 col-xs-12">
           <div className="row">
             <div className="col-12 mb-1">
               <label>Item Name</label>
@@ -97,6 +114,28 @@ class AddItem extends Component {
                 }}
                 className="form-control"
               ></textarea>
+            </div>
+            <div className="col-12 mb-1">
+              <img
+                style={{ display: "none" }}
+                src={this.state.ImgURL}
+                onLoad={() => {
+                  this.handleImageLoad(true);
+                }}
+                onError={() => {
+                  this.handleImageLoad(false);
+                }}
+              />
+              <label>Image URL</label>
+              <input
+                type="text"
+                name="item-image-url"
+                value={this.state.ImgURL}
+                onChange={(event) => {
+                  this.setItemValue(event.target);
+                }}
+                className="form-control"
+              />
             </div>
             <div className="col-12 mb-2">
               <label>Price</label>

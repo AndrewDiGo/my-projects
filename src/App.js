@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "./components/navbar";
 import ImageContent from "./components/imageContent";
-import List from "./components/lists";
+import ProductList from "./components/productList";
 import "./App.css";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <React.Fragment>
       <Navbar />
       <ImageContent />
-      <List />
+      <ProductList />
     </React.Fragment>
   );
 }
